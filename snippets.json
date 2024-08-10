@@ -1,0 +1,56 @@
+{
+  "Console log": {
+    "scope": "javascript,typescript",
+    "prefix": "cl",
+    "body": ["console.log($1)"],
+    "description": "Log output to console"
+  },
+
+  "Create Service": {
+    "scope": "javascript,typescript",
+    "prefix": "service",
+    "body": [
+      "class $TM_FILENAME_BASE {",
+      "\tconstructor() {",
+      "\t\t$0",
+      "\t}",
+      "}",
+      "",
+      "export default new $TM_FILENAME_BASE()"
+    ],
+    "description": "Generate a class template and export an instance"
+  },
+
+  "React Functional Component with Props": {
+    "prefix": "rfcp",
+    "body": [
+      "interface ${TM_FILENAME_BASE/([^-]+)-?/${1:/capitalize}/g}Props {",
+      "",
+      "}",
+      "",
+      "export function ${TM_FILENAME_BASE/([^-]+)-?/${1:/capitalize}/g}({}: ${TM_FILENAME_BASE/([^-]+)-?/${1:/capitalize}/g}Props) {",
+      "  return (",
+      "    $0",
+      "  )",
+      "}",
+      ""
+    ],
+    "description": "Create a React functional component with TypeScript props using the filename"
+  },
+
+  "React TypeScript Hook From Filename": {
+    "scope": "typescriptreact,typescript",
+    "prefix": "hook",
+    "body": [
+      "type ${TM_FILENAME_BASE/([^-]+)-?/${1:/capitalize}/g}Params = {",
+      "",
+      "}",
+      "",
+      "export function ${TM_FILENAME_BASE/([^-]+)-?/${1:/capitalize}/g}({}: ${TM_FILENAME_BASE/([^-]+)-?/${1:/capitalize}/g}Params) {",
+      "",
+      "}",
+      ""
+    ],
+    "description": "Creates a typed React hook based on the kebab-case filename."
+  }
+}
