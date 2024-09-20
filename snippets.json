@@ -52,5 +52,29 @@
       ""
     ],
     "description": "Creates a typed React hook based on the kebab-case filename."
+  },
+
+  "UseCase Template": {
+    "prefix": "usecase",
+    "body": [
+      "interface ${TM_FILENAME_BASE/([^\\w]|^)(\\w)/${2:/upcase}/g}Request {",
+      "   $1",
+      "}",
+      "",
+      "interface ${TM_FILENAME_BASE/([^\\w]|^)(\\w)/${2:/upcase}/g}Response {",
+      "   $2",
+      "}",
+      "",
+      "export class ${TM_FILENAME_BASE/([^\\w]|^)(\\w)/${2:/upcase}/g}UseCase {",
+      "  constructor(",
+      "    $3",
+      "  ) {}",
+      "",
+      "  async execute({}: ${TM_FILENAME_BASE/([^\\w]|^)(\\w)/${2:/upcase}/g}Request): Promise<${TM_FILENAME_BASE/([^\\w]|^)(\\w)/${2:/upcase}/g}Response> {",
+      "    $0",
+      "  }",
+      "}"
+    ],
+    "description": "Creates a use case class and interfaces based on the file name."
   }
 }
