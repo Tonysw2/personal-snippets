@@ -57,11 +57,11 @@
   "UseCase Template": {
     "prefix": "usecase",
     "body": [
-      "interface ${TM_FILENAME_BASE/([^\\w]|^)(\\w)/${2:/upcase}/g}Request {",
+      "interface ${TM_FILENAME_BASE/([^\\w]|^)(\\w)/${2:/upcase}/g}UseCaseRequest {",
       "   $1",
       "}",
       "",
-      "interface ${TM_FILENAME_BASE/([^\\w]|^)(\\w)/${2:/upcase}/g}Response {",
+      "interface ${TM_FILENAME_BASE/([^\\w]|^)(\\w)/${2:/upcase}/g}UseCaseResponse {",
       "   $2",
       "}",
       "",
@@ -70,7 +70,7 @@
       "    $3",
       "  ) {}",
       "",
-      "  async execute({}: ${TM_FILENAME_BASE/([^\\w]|^)(\\w)/${2:/upcase}/g}Request): Promise<${TM_FILENAME_BASE/([^\\w]|^)(\\w)/${2:/upcase}/g}Response> {",
+      "  async execute({}: ${TM_FILENAME_BASE/([^\\w]|^)(\\w)/${2:/upcase}/g}UseCaseRequest): Promise<${TM_FILENAME_BASE/([^\\w]|^)(\\w)/${2:/upcase}/g}UseCaseResponse> {",
       "    $0",
       "  }",
       "}"
